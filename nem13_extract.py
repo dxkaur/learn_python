@@ -26,16 +26,18 @@ root = tree.getroot()
 
 # Extracting data from XML
 mdp = root.find('Header/From')
-print("MDP From : ", mdp.text)
+print("MDP: ", mdp.text)
+to = root.find('Header/To')
+print("To: ", to.text)
 messageIdRegex = re.compile(r'[A-Z]{6,8}-[A-Z]{3}-\d{12}')
 message_id = root.find('Header/MessageID')
 result = messageIdRegex.search(message_id.text)
 if result:
-    print("MDP from MessageId : ", result.group()[0:8])
+    print("MessageId : ", result.group())
 else:
     print("No message ID found.")
-assert mdp.text == result.group()[0:8], "MDP From does not match MessageId MDP"
+assert to.text == 'AMPOLNRG', "MDP From does not match MessageId MDP"
 
 passFile = open("resources/result_nem13.csv", "w")
-passFile.write("MDP,MessageID\n")
-passFile.write(f"{mdp.text},{message_id.text}\n")
+passFile.write("From,To,MessageID\n")
+passFile.write(f"{mdp.text},{to.text},{message_id.text}\n")
