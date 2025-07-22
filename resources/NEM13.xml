@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<ase:aseXML xmlns:ase="urn:aseXML:r41" 
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+            xsi:schemaLocation="urn:aseXML:r41 http://www.nemmco.com.au/aseXML/schemas/r41/aseXML_r41.xsd">
+	<Header>
+		<From>ENERGEXM</From>
+		<To>AMPOLNRG</To>
+		<MessageID>ENERGEXM-MSG-202410031417</MessageID>
+		<MessageDate>2024-10-03T14:10:31.100+11:00</MessageDate>
+		<TransactionGroup>MTRD</TransactionGroup>
+		<Priority>Low</Priority>
+		<Market>NEM</Market>
+	</Header>
+	<Transactions>
+		<Transaction transactionID="ENERGEXM-TNS-202410031333" transactionDate="2024-10-03T14:10:31.100+11:00" initiatingTransactionID="AMPOLNRG-TNS-202410031333">
+			<MeterDataNotification version="r25">
+				<CSVConsumptionData>
+100,NEM13,202410031333,ENERGEXM,AMPOLNRG
+250,QB03771946,11,01,01,11,1882942,E,50,20240601091510,A,,,110,20240901091000,A,,,60,kWh,20241003,20241003095010,20241003095010
+900</CSVConsumptionData>
+				<ParticipantRole>
+					<Role>FRMP</Role>
+				</ParticipantRole>
+			</MeterDataNotification>
+		</Transaction>
+	</Transactions>
+</ase:aseXML>
